@@ -36,24 +36,12 @@ This project demonstrates the end-to-end design, provisioning, and deployment of
 ---
 
 ## 🏗️ Architecture
+High-Level Architecture Diagram
 <img width="1080" height="722" alt="image" src="https://github.com/user-attachments/assets/83aae3f8-9092-49bb-89d0-a0232d5a7058" />
 
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-VPC: 10.0.0.0/16 — us-east-1 (3 Availability Zones)
-
-  Public Subnets                    Private Subnets
-  ┌──────────────────┐              ┌──────────────────┐
-  │ 10.0.101.0/24    │              │ 10.0.1.0/24      │
-  │ 10.0.102.0/24    │──NAT GW──►  │ 10.0.2.0/24      │
-  │ 10.0.103.0/24    │              │ 10.0.3.0/24      │
-  └──────────────────┘              └──────────────────┘
-  NLB, NAT Gateways                 All K8s Nodes (No Public IPs)
-```
-
----
 
 ## ☁️ AWS Infrastructure (Terraform)
 
