@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "taskapp-tf-state-109804294707"
+    bucket         = "REPLACE_WITH_TF_STATE_BUCKET"
     key            = "prod/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "taskapp-tf-lock"

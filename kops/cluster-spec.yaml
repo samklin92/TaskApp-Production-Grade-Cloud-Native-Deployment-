@@ -13,7 +13,7 @@ spec:
     rbac: {}
   channel: stable
   cloudProvider: aws
-  configBase: s3://taskapp-kops-state-109804294707/taskapp.samklin.online
+  configBase: s3://taskapp-kops-state-YOUR_ACCOUNT_ID/taskapp.samklin.online
   dnsZone: samklin.online
   etcdClusters:
   - cpuRequest: 200m
