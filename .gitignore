@@ -6,7 +6,7 @@
 .terraform.lock.hcl
 
 # Secrets — never commit
-**/secrets.yaml
+
 **/.env
 **/.env.*
 !**/.env.example
