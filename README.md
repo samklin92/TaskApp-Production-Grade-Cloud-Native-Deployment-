@@ -1,4 +1,4 @@
-# 🚀 TaskApp — Production-Grade Cloud-Native Deployment on AWS
+#  TaskApp — Production-Grade Cloud-Native Deployment on AWS
 
 <div align="center">
 
@@ -38,39 +38,8 @@ This project demonstrates the end-to-end design, provisioning, and deployment of
 ## 🏗️ Architecture
 
 ```
-                        ┌─────────────────────────────┐
-                        │         Internet             │
-                        └──────────────┬──────────────┘
-                                       │
-                        ┌──────────────▼──────────────┐
-                        │    Route53 (samklin.online)  │
-                        │  taskapp.samklin.online CNAME│
-                        └──────────────┬──────────────┘
-                                       │
-                        ┌──────────────▼──────────────┐
-                        │   AWS Network Load Balancer  │
-                        │   (Public, 3 AZs)            │
-                        └──────────────┬──────────────┘
-                                       │
-                        ┌──────────────▼──────────────┐
-                        │   NGINX Ingress Controller   │
-                        │   TLS Termination (HTTPS)    │
-                        │   cert-manager + Let's Encrypt│
-                        └──────┬───────────────┬───────┘
-                               │               │
-               ┌───────────────▼──┐     ┌──────▼──────────────┐
-               │  React Frontend  │     │   Flask Backend API  │
-               │  2 Replicas      │     │   2 Replicas         │
-               │  Port 8080       │     │   Port 5000          │
-               │  Non-root        │     │   Non-root           │
-               └──────────────────┘     └──────────┬──────────┘
-                                                   │
-                                        ┌──────────▼──────────┐
-                                        │  PostgreSQL          │
-                                        │  StatefulSet         │
-                                        │  20Gi EBS gp3        │
-                                        │  Encrypted PVC       │
-                                        └─────────────────────┘
+<img width="1080" height="722" alt="image" src="https://github.com/user-attachments/assets/f8e0543f-2276-4e8a-8163-3d0367099f7d" />
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
