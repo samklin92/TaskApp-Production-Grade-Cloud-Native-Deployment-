@@ -36,9 +36,8 @@ This project demonstrates the end-to-end design, provisioning, and deployment of
 ---
 
 ## 🏗️ Architecture
+<img width="1080" height="722" alt="image" src="https://github.com/user-attachments/assets/83aae3f8-9092-49bb-89d0-a0232d5a7058" />
 
-```
-<img width="1080" height="722" alt="image" src="https://github.com/user-attachments/assets/f8e0543f-2276-4e8a-8163-3d0367099f7d" />
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
