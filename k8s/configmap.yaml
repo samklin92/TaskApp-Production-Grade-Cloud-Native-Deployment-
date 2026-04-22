@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taskapp-config
+  namespace: taskapp
+data:
+  DATABASE_HOST: "postgres-service.taskapp.svc.cluster.local"
+  DATABASE_PORT: "5432"
+  DATABASE_NAME: "taskapp"
+  FLASK_ENV: "production"
+  FLASK_PORT: "5000"

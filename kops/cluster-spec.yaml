@@ -1,0 +1,100 @@
+apiVersion: kops.k8s.io/v1alpha2
+kind: Cluster
+metadata:
+  creationTimestamp: "2026-04-22T07:49:32Z"
+  generation: 1
+  name: taskapp.samklin.online
+spec:
+  api:
+    loadBalancer:
+      class: Network
+      type: Public
+  authorization:
+    rbac: {}
+  channel: stable
+  cloudProvider: aws
+  configBase: s3://taskapp-kops-state-109804294707/taskapp.samklin.online
+  dnsZone: samklin.online
+  etcdClusters:
+  - cpuRequest: 200m
+    etcdMembers:
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1a
+      name: a
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1b
+      name: b
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1c
+      name: c
+    manager:
+      backupRetentionDays: 90
+    memoryRequest: 100Mi
+    name: main
+  - cpuRequest: 100m
+    etcdMembers:
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1a
+      name: a
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1b
+      name: b
+    - encryptedVolume: true
+      instanceGroup: control-plane-us-east-1c
+      name: c
+    manager:
+      backupRetentionDays: 90
+    memoryRequest: 100Mi
+    name: events
+  iam:
+    allowContainerRegistry: true
+    legacy: false
+  kubelet:
+    anonymousAuth: false
+  kubernetesApiAccess:
+  - 0.0.0.0/0
+  - ::/0
+  kubernetesVersion: 1.28.15
+  masterPublicName: api.taskapp.samklin.online
+  networkCIDR: 10.0.0.0/16
+  networkID: vpc-03b03a4d446ce54de
+  networking:
+    calico: {}
+  nonMasqueradeCIDR: 100.64.0.0/10
+  sshAccess:
+  - 0.0.0.0/0
+  - ::/0
+  subnets:
+  - cidr: 10.0.1.0/24
+    id: subnet-0e0fad543356bc21c
+    name: us-east-1a
+    type: Private
+    zone: us-east-1a
+  - cidr: 10.0.2.0/24
+    id: subnet-0b5940e18107fe97f
+    name: us-east-1b
+    type: Private
+    zone: us-east-1b
+  - cidr: 10.0.3.0/24
+    id: subnet-0365b32f018f78671
+    name: us-east-1c
+    type: Private
+    zone: us-east-1c
+  - cidr: 10.0.101.0/24
+    id: subnet-0bfa6274eb84a7802
+    name: utility-us-east-1a
+    type: Utility
+    zone: us-east-1a
+  - cidr: 10.0.102.0/24
+    id: subnet-0d9c82ec289347c47
+    name: utility-us-east-1b
+    type: Utility
+    zone: us-east-1b
+  - cidr: 10.0.103.0/24
+    id: subnet-04ae5c02d996a19d7
+    name: utility-us-east-1c
+    type: Utility
+    zone: us-east-1c
+  topology:
+    dns:
+      type: Public

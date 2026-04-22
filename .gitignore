@@ -1,0 +1,16 @@
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform.lock.hcl
+
+# Secrets — never commit
+**/secrets.yaml
+**/.env
+**/.env.*
+!**/.env.example
+
+# OS
+.DS_Store
+*.swp
